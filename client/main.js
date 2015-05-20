@@ -6,8 +6,10 @@ SimpleRationalRanks = {
     afterLast: function (lastRank) {return lastRank+1;}
 };
 
-Template.body.rendered = function() {
-    this.$("div.main-container").find("div.task-list").sortable({
+Template.template_tasks.rendered = function() {
+    this.
+    /*$("div.main-container").find*/
+        $("div.task-list").sortable({
         stop: function (event, ui) {
             var el = ui.item.get(0), before = ui.item.prev().get(0), after = ui.item.next().get(0);
 

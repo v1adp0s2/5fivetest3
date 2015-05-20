@@ -51,10 +51,10 @@ body {
 }
 
 .main-container {
-    position: relative;
+    position: absolute;
     right: 0;
     left: 0;
-    top: 0;
+    top: 58px;
     z-index: 0;
 }
 
@@ -96,12 +96,12 @@ form {
 .new-task input:focus{
     outline: 0;
 }
-div.main-container div.task-list {
+/*div.main-container*/ div.task-list {
     margin: 0;
     padding: 0;
     background: white;
 }
-div.main-container div.task-list div {
+/*div.main-container*/ div.task-list div {
     position: relative;
     list-style: none;
     padding: 15px;
@@ -175,4 +175,31 @@ header .hide-completed {
 
 .navbar {
     margin-bottom: 5px;
+}
+
+.nav > li {
+    padding: 5px;
+}
+
+.navbar-collapse {
+    padding: 0!important;
+}
+
+.navbar-right {
+    margin-right: 0;
+}
+
+#login-sign-in-link, #login-name-link, .login-close-text {
+    display: none;
+}
+
+#login-dropdown-list {
+    height: 250px;
+    margin: 5% auto;
+    position: relative;
+    padding: 12px;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 10px;
 }

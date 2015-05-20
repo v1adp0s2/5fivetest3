@@ -1,0 +1,30 @@
+<template name="MainMenu">
+    <div class="navbar navbar-default" role="navigation">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="{{activeMenu 'Home'}}"><a href="{{pathFor 'home'}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+            {{#if currentUser}}
+                <li class="{{activeMenu 'scenarios'}}"><a href="{{pathFor 'application'}}"><span class="glyphicon glyphicon-option-horizontal"></span> Applications</a></li>
+                <li class="{{activeMenu 'displays'}}"><a href="{{pathFor 'profile'}}"><span class="glyphicon glyphicon-apple"></span> Profile</a></li>
+                <li class="{{activeMenu 'tasks'}}"><a href="{{pathFor 'tasks'}}"><span class="glyphicon glyphicon-menu-hamburger"></span> Tasks</a></li>
+            {{/if}}
+        </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{{activeMenu 'About'}}"><a href="{{pathFor 'about'}}"><span class="glyphicon glyphicon-list"></span> About</a></li>
+                <li class="{{activeMenu 'Login'}}">
+                    {{#if currentUser}}
+                        <a href="{{pathFor 'logout'}}">
+                            <span class="glyphicon glyphicon-user"></span> {{currentUser.profile.name}}
+                        </a>
+                    {{else}}
+                        <a href="{{pathFor 'login'}}">
+                            <span class="glyphicon glyphicon-user"></span> Login
+                        </a>
+                    {{/if}}
+                    </li>
+            </ul>
+        </div>
+    </div>
+</template>

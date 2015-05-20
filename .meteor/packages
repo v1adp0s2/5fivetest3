@@ -17,3 +17,4 @@ zuuk:stale-session
 iron:router
 mjn:famous
 twbs:bootstrap
+iron:layout

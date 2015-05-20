@@ -13,7 +13,6 @@ Meteor.methods({
         }
     },
     reorder: function() {
-        console.log("in tasks.normalize")
         Tasks.createValues(1);
     }
 });

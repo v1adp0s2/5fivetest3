@@ -3,16 +3,21 @@
 Template.body.helpers({
     counter: function () {
         return Session.get('counter');
-    },
-    tasks: function () {
+    }
+});
+
+Template.template_tasks.helpers({
+    tasks2show: function () {
         return Tasks.find({}, {sort: {rank:1}});
     }
 });
 
-Template.home.autoredirect = function(){
-    // code goes here
-    Router.go('about');
-}
+Template.login.helpers({
+    showLogin: function(){
+        // code goes here
+        Accounts._loginButtonsSession.set('dropdownVisible', true);
+    }
+});
 
 Template.body.events({
     'click button[id=btnHello]': function () {
@@ -46,4 +51,22 @@ Template.body.events({
             console.log(JSON.stringify(data));
         });
     }
+});
+
+Template.login.events({
+    'click button[id=login-buttons-password]': function () {
+        // increment the counter when button is clicked
+        Session.set('counter', Session.get('counter') + 1);
+
+        var tb = Session.get('tb');
+
+        console.log(JSON.stringify(tb))
+        //tb.info("just for your information", {"date":new Date()}, "Meteor.startup");
+    }
+});
+
+Template.logout.events({
+    /*'click #logout-button': function() {
+        Meteor.logout();
+    }*/
 });

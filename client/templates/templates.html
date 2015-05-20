@@ -1,0 +1,40 @@
+<template name="home">
+    This is the home template.
+</template>
+
+<template name="logo.small">
+    Logo
+</template>
+
+<template name="about">
+    About.
+</template>
+
+<template name="application">
+    Application.
+</template>
+
+<template name="profile">
+    Profile.
+</template>
+
+<template name="template_tasks">
+    <header>
+        <h1>Todo List</h1>
+    </header>
+    <div class="task-list">
+        {{#each tasks2show}}
+            <div uuid="{{_id}}">{{text}}</div>
+        {{/each}}
+    </div>
+    <footer style="height: 30px;">
+        <button id="normalizeItems">Normalize</button>
+    </footer>
+</template>
+
+<template name="login">
+    {{> loginButtons}}
+</template>
+<template name="logout">
+
+</template>
